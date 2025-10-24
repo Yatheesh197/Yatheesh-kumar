@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Social Login Dashboard — Safe Links</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#06b6d4;
+      --btn-bg:#0ea5a3; --white:#ffffff;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    html,body{height:100%; margin:0; background:linear-gradient(180deg,#071028 0%, #081428 100%); color:var(--white);}
+    .wrap{max-width:980px; margin:48px auto; padding:28px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; box-shadow: 0 8px 30px rgba(2,6,23,0.6);}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+    h1{margin:0;font-size:20px;letter-spacing:-0.2px}
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:13px}
+    .grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); margin-top:18px}
+    .card{background:var(--card); padding:16px;border-radius:10px; display:flex; flex-direction:column; gap:12px; min-height:130px;}
+    .meta{display:flex; align-items:center; gap:12px}
+    .logo{width:44px; height:44px; display:grid; place-items:center; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
+    .service{font-weight:600; font-size:15px}
+    .desc{color:var(--muted); font-size:13px; margin-top: -4px}
+    .actions{margin-top:auto; display:flex; gap:8px; align-items:center}
+    .btn{
+      padding:8px 12px; border-radius:8px; border:0; cursor:pointer; font-weight:600; color:var(--white);
+      background:var(--btn-bg); text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+      box-shadow: 0 6px 18px rgba(6,182,212,0.06);
+      transition:transform .08s ease;
+    }
+    .btn:active{transform:translateY(1px)}
+    .ghost{background:transparent; color:var(--muted); padding:8px; border-radius:8px; font-weight:600; border:1px solid rgba(255,255,255,0.04); text-decoration:none}
+    footer{margin-top:18px; color:var(--muted); font-size:13px}
+    code{background:rgba(255,255,255,0.03); padding:6px 8px; border-radius:6px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace; font-size:12px; color:#d6fdfd;}
+    .note{color:#ffd; background:rgba(255,220,80,0.06); padding:10px;border-radius:8px}
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <header>
+      <div style="width:48px; height:48px; border-radius:10px; display:grid;place-items:center; background:linear-gradient(90deg,#06b6d4,#7c3aed); font-weight:700">S</div>
+      <div>
+        <h1>Social Login Dashboard</h1>
+        <p class="lead">Safe links to official login pages. This page <strong>does not</strong> collect credentials.</p>
+      </div>
+    </header>
+
+    <div class="grid" aria-label="Social login links">
+      <!-- Twitter / X -->
+      <article class="card" id="twitter">
+        <div class="meta">
+          <div class="logo" aria-hidden="true" style="background:linear-gradient(90deg,#1DA1F2,#0ea5a3)">
+            <!-- simple bird-ish SVG -->
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M23 4.5c-.7.3-1.4.5-2.2.6.8-.5 1.4-1.3 1.7-2.3-.7.4-1.7.7-2.6.9-.8-.9-2-1.5-3.3-1.5-2.5 0-4.6 2.1-4.6 4.7 0 .4 0 .8.1 1.1-3.8-.2-7.2-2.1-9.5-5-.4.6-.6 1.3-.6 2 0 1.6.8 3 2.1 3.9-.6 0-1.2-.2-1.7-.5v.1c0 2.3 1.6 4.2 3.8 4.6-.4.1-.9.1-1.3.1-.3 0-.6 0-.9-.1.6 1.8 2.4 3.1 4.6 3.1-1.7 1.3-3.8 2-6.1 2-.4 0-.8 0-1.1-.1 2.2 1.4 4.8 2.2 7.6 2.2 9.1 0 14.1-7.6 14.1-14.2v-.6c1-.7 1.8-1.6 2.4-2.6z" fill="#fff"/></svg>
+          </div>
+          <div>
+            <div class="service">Twitter / X</div>
+            <div class="desc">Opens the official Twitter (X) login page.</div>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://twitter.com/login" target="_blank" rel="noopener noreferrer">Open Twitter Login</a>
+          <a class="ghost" href="https://twitter.com/i/oauth2/authorize" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+      </article>
+
+      <!-- YouTube (Google) -->
+      <article class="card" id="youtube">
+        <div class="meta">
+          <div class="logo" aria-hidden="true" style="background:linear-gradient(90deg,#ff0000,#ff6a6a)">
+            <svg width="28" height="20" viewBox="0 0 24 16" fill="none" aria-hidden="true"><path d="M22 1.5s-.2-1.6-1-2.3C19.3-1 12-1 12-1s-7.3 0-9 .8C2.2-.1 2 1.5 2 1.5S1 4.2 1 6.9v2.2C1 11.8 2 14.5 2 14.5s.2 1.6 1 2.3c1.7.8 9 .8 9 .8s7.3 0 9-.8c.8-.7 1-2.3 1-2.3s1-2.7 1-5.4V6.9C23 4.2 22 1.5 22 1.5z" fill="#fff"/><path d="M10 5l5 3-5 3V5z" fill="#ff0000"/></svg>
+          </div>
+          <div>
+            <div class="service">YouTube (Google)</div>
+            <div class="desc">Opens YouTube / Google sign-in. Use Google OAuth for app sign-in.</div>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://accounts.google.com/ServiceLogin?service=youtube" target="_blank" rel="noopener noreferrer">Open YouTube Login</a>
+          <a class="ghost" href="https://accounts.google.com/o/oauth2/v2/auth" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+      </article>
+
+      <!-- Facebook -->
+      <article class="card" id="facebook">
+        <div class="meta">
+          <div class="logo" aria-hidden="true" style="background:linear-gradient(90deg,#1877f2,#0b4fd7)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 3H12c-2.8 0-4 1.9-4 4.8V11H5v3h3v7h3v-7h2.6l.4-3H11V7.6C11 6.6 11.6 6 12.6 6H15V3z" fill="#fff"/></svg>
+          </div>
+          <div>
+            <div class="service">Facebook</div>
+            <div class="desc">Official Facebook login page.</div>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://www.facebook.com/login" target="_blank" rel="noopener noreferrer">Open Facebook Login</a>
+          <a class="ghost" href="https://www.facebook.com/v{API_VERSION}/dialog/oauth" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+      </article>
+
+      <!-- LinkedIn -->
+      <article class="card" id="linkedin">
+        <div class="meta">
+          <div class="logo" aria-hidden="true" style="background:linear-gradient(90deg,#0077b5,#00a0dc)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9H3v12h3V9zM4.5 3C3.7 3 3 3.7 3 4.5S3.7 6 4.5 6 6 5.3 6 4.5 5.3 3 4.5 3zM21 9h-2.9c-1.2 0-1.8.6-2.1 1.2V9H14v12h3v-6.2c0-1.6.3-3 2.1-3 1.7 0 1.9 1.6 1.9 3.1V21H23V9z" fill="#fff"/></svg>
+          </div>
+          <div>
+            <div class="service">LinkedIn</div>
+            <div class="desc">Official LinkedIn login page — use LinkedIn OAuth for app authentication.</div>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://www.linkedin.com/login" target="_blank" rel="noopener noreferrer">Open LinkedIn Login</a>
+          <a class="ghost" href="https://www.linkedin.com/oauth/v2/authorization" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+      </article>
+
+      <!-- Instagram -->
+      <article class="card" id="instagram">
+        <div class="meta">
+          <div class="logo" aria-hidden="true" style="background:linear-gradient(90deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.5A4.5 4.5 0 1 0 16.5 13 4.5 4.5 0 0 0 12 8.5zM18.5 6a1 1 0 1 1-1 1 1 1 0 0 1 1-1z" fill="#fff"/></svg>
+          </div>
+          <div>
+            <div class="service">Instagram</div>
+            <div class="desc">Official Instagram login. Instagram uses Facebook Graph OAuth for apps.</div>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://www.instagram.com/accounts/login/" target="_blank" rel="noopener noreferrer">Open Instagram Login</a>
+          <a class="ghost" href="https://api.instagram.com/oauth/authorize" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+      </article>
+    </div>
+
+    <section style="margin-top:18px;">
+      <div class="note">
+        <strong>Security note:</strong> This dashboard redirects users to the official login pages. Do NOT build forms that look identical to these services or collect usernames/passwords for them — that can be phishing and is illegal.
+      </div>
+
+      
+    </section>
+  </div>
+</body>
+</html>
